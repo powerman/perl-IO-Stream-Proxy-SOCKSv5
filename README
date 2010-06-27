@@ -1,0 +1,32 @@
+IO-Stream-Proxy-SOCKSv5 version 1.0.0
+
+This module is plugin for IO::Stream which allow you to route stream
+through SOCKSv5 proxy.
+
+You may use several IO::Stream::Proxy::SOCKSv5 plugins for single IO::Stream
+object, effectively creating proxy chain (first proxy plugin will define
+last proxy in a chain).
+
+
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+
+DEPENDENCIES
+
+IO::Stream
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2010, Alex Efros
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.

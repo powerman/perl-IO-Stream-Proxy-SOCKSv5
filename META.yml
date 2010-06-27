@@ -1,0 +1,27 @@
+---
+abstract: 'SOCKSv5 proxy plugin for IO::Stream'
+author:
+  - 'Alex Efros <powerman-asdf@ya.ru>'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+  Test::Exception: 0
+  Test::More: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
+distribution_type: module
+generated_by: 'Module::Install version 0.91'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: IO-Stream-Proxy-SOCKSv5
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  IO::Stream: 0
+  version: 0
+resources:
+  license: http://dev.perl.org/licenses/
+version: 1.000000
