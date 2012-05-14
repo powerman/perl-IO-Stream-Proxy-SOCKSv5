@@ -4,7 +4,7 @@ use warnings;
 use strict;
 use Carp;
 
-use version; our $VERSION = qv('1.0.0');    # update POD & Changes & README
+use version; our $VERSION = qv('1.0.1');    # update POD & Changes & README
 
 # update DEPENDENCIES in POD & Makefile.PL & README
 use IO::Stream::const;
@@ -18,9 +18,13 @@ use constant CONNECTING     => 2;
 use constant VN             => 0x05;# version number (5)
 use constant AUTH_NO        => 0x00;# authentication method id
 use constant CD             => 0x01;# command code (CONNECT)
+## no critic (Capitalization)
 use constant ADDR_IPv4      => 0x01;# address type (IPv4)
 use constant ADDR_DOMAIN    => 0x03;# address type (DOMAIN)
 use constant ADDR_IPv6      => 0x04;# address type (IPv6)
+use constant LEN_IPv4       => 4;
+use constant LEN_IPv6       => 16;
+## use critic
 use constant REPLY_LEN_HANDSHAKE=> 2; # reply length for handshake (bytes)
 use constant REPLY_LEN_CONNECT  => 4; # reply length for connect header (bytes)
 use constant REPLY_CD       => 0x00;# reply code 'request granted'
@@ -75,7 +79,8 @@ sub WRITE {
     return;
 }
 
-sub EVENT {
+sub EVENT { ## no critic (ProhibitExcessComplexity)
+    ## no critic (ProhibitDeepNests)
     my ($self, $e, $err) = @_;
     my $m = $self->{_master};
     if ($err) {
@@ -98,7 +103,7 @@ sub EVENT {
                     $self->{_state} = CONNECTING;
                     $self->{out_buf} = pack 'C C C C CCCC n',
                         VN, CD, 0, ADDR_IPv4,
-                        split(/\./xms, $self->{_master}{ip}), $self->{_port};
+                        split(/[.]/xms, $self->{_master}{ip}), $self->{_port};
                     $self->{_slave}->WRITE();
                 }
             }
@@ -120,9 +125,9 @@ sub EVENT {
                 }
                 else {
                     my $tail_len
-                        = $atype == ADDR_IPv4   ? 4+2
+                        = $atype == ADDR_IPv4   ? LEN_IPv4+2
                         : $atype == ADDR_DOMAIN ? 1+unpack('C', $self->{in_buf})+2
-                        :                         16+2
+                        :                         LEN_IPv6+2
                         ;
                     if (length $self->{in_buf} < $tail_len) {
                         $m->EVENT(0, 'socks v5 proxy: protocol error');
@@ -165,7 +170,7 @@ IO::Stream::Proxy::SOCKSv5 - SOCKSv5 proxy plugin for IO::Stream
 
 =head1 VERSION
 
-This document describes IO::Stream::Proxy::SOCKSv5 version 1.0.0
+This document describes IO::Stream::Proxy::SOCKSv5 version 1.0.1
 
 
 =head1 SYNOPSIS
