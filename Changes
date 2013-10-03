@@ -1,5 +1,8 @@
 Revision history for IO-Stream-Proxy-SOCKSv5
 
+1.0.2   Thu Oct  3 17:02:13 EEST 2013
+	Remove MYMETA.*
+
 1.0.1	Sun May 13 06:01:33 EEST 2012
 	Fix requirements.
 

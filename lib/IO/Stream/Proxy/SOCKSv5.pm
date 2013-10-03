@@ -4,7 +4,7 @@ use warnings;
 use strict;
 use Carp;
 
-use version; our $VERSION = qv('1.0.1');    # update POD & Changes & README
+use version; our $VERSION = qv('1.0.2');    # update POD & Changes & README
 
 # update DEPENDENCIES in POD & Makefile.PL & README
 use IO::Stream::const;
@@ -170,7 +170,7 @@ IO::Stream::Proxy::SOCKSv5 - SOCKSv5 proxy plugin for IO::Stream
 
 =head1 VERSION
 
-This document describes IO::Stream::Proxy::SOCKSv5 version 1.0.1
+This document describes IO::Stream::Proxy::SOCKSv5 version 1.0.2
 
 
 =head1 SYNOPSIS
