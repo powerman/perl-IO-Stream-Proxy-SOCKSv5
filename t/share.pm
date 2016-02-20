@@ -21,7 +21,6 @@ $EV::DIED   = sub { diag $@; EV::unloop };
 use constant WIN32   => IO::Stream::WIN32;
 use constant BUFSIZE => IO::Stream::BUFSIZE;
 
-use t::config;
 
 ### Usage example:
 #@CheckPoint = (

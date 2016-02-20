@@ -1,12 +1,12 @@
 package IO::Stream::Proxy::SOCKSv5;
-
+use 5.010001;
 use warnings;
 use strict;
+use utf8;
 use Carp;
 
-use version; our $VERSION = qv('1.0.2');    # update POD & Changes & README
+our $VERSION = 'v1.0.2';
 
-# update DEPENDENCIES in POD & Makefile.PL & README
 use IO::Stream::const;
 use IO::Stream::EV;
 use Scalar::Util qw( weaken );
@@ -163,6 +163,10 @@ sub EVENT { ## no critic (ProhibitExcessComplexity)
 1; # Magic true value required at end of module
 __END__
 
+=encoding utf8
+
+=for stopwords SOCKSv5
+
 =head1 NAME
 
 IO::Stream::Proxy::SOCKSv5 - SOCKSv5 proxy plugin for IO::Stream
@@ -170,7 +174,7 @@ IO::Stream::Proxy::SOCKSv5 - SOCKSv5 proxy plugin for IO::Stream
 
 =head1 VERSION
 
-This document describes IO::Stream::Proxy::SOCKSv5 version 1.0.2
+This document describes IO::Stream::Proxy::SOCKSv5 version v1.0.2
 
 
 =head1 SYNOPSIS
@@ -246,23 +250,7 @@ IO::Stream->new() instead.
 =back
 
 
-
-=head1 CONFIGURATION AND ENVIRONMENT
-
-IO::Stream::Proxy::SOCKSv5 requires no configuration files or environment variables.
-
-
-=head1 DEPENDENCIES
-
-L<IO::Stream>.
-
-
-=head1 INCOMPATIBILITIES
-
-None reported.
-
-
-=head1 BUGS AND LIMITATIONS
+=head1 LIMITATIONS
 
 Only these authentication methods supported:
 
@@ -272,45 +260,64 @@ SOCKS "BIND" request doesn't supported.
 
 SOCKS "associate UDP" request doesn't supported.
 
-No bugs have been reported.
 
-Please report any bugs or feature requests to
-C<bug-io-stream-proxy-socksv5@rt.cpan.org>, or through the web interface at
-L<http://rt.cpan.org>.
+=head1 SUPPORT
+
+=head2 Bugs / Feature Requests
+
+Please report any bugs or feature requests through the issue tracker
+at L<https://github.com/powerman/perl-IO-Stream-Proxy-SOCKSv5/issues>.
+You will be notified automatically of any progress on your issue.
+
+=head2 Source Code
+
+This is open source software. The code repository is available for
+public review and contribution under the terms of the license.
+Feel free to fork the repository and submit pull requests.
+
+L<https://github.com/powerman/perl-IO-Stream-Proxy-SOCKSv5>
+
+    git clone https://github.com/powerman/perl-IO-Stream-Proxy-SOCKSv5.git
+
+=head2 Resources
+
+=over
+
+=item * MetaCPAN Search
+
+L<https://metacpan.org/search?q=IO-Stream-Proxy-SOCKSv5>
+
+=item * CPAN Ratings
+
+L<http://cpanratings.perl.org/dist/IO-Stream-Proxy-SOCKSv5>
+
+=item * AnnoCPAN: Annotated CPAN documentation
+
+L<http://annocpan.org/dist/IO-Stream-Proxy-SOCKSv5>
+
+=item * CPAN Testers Matrix
+
+L<http://matrix.cpantesters.org/?dist=IO-Stream-Proxy-SOCKSv5>
+
+=item * CPANTS: A CPAN Testing Service (Kwalitee)
+
+L<http://cpants.cpanauthors.org/dist/IO-Stream-Proxy-SOCKSv5>
+
+=back
 
 
 =head1 AUTHOR
 
-Alex Efros  C<< <powerman-asdf@ya.ru> >>
+Alex Efros E<lt>powerman@cpan.orgE<gt>
 
 
-=head1 LICENSE AND COPYRIGHT
+=head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2010, Alex Efros C<< <powerman-asdf@ya.ru> >>. All rights reserved.
+This software is Copyright (c) 2010 by Alex Efros E<lt>powerman@cpan.orgE<gt>.
 
-This module is free software; you can redistribute it and/or
-modify it under the same terms as Perl itself. See L<perlartistic>.
+This is free software, licensed under:
+
+  The MIT (X11) License
 
 
-=head1 DISCLAIMER OF WARRANTY
-
-BECAUSE THIS SOFTWARE IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
-FOR THE SOFTWARE, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN
-OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
-PROVIDE THE SOFTWARE "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
-EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE
-ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE IS WITH
-YOU. SHOULD THE SOFTWARE PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL
-NECESSARY SERVICING, REPAIR, OR CORRECTION.
-
-IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
-WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
-REDISTRIBUTE THE SOFTWARE AS PERMITTED BY THE ABOVE LICENCE, BE
-LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL,
-OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE
-THE SOFTWARE (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING
-RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A
-FAILURE OF THE SOFTWARE TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
-SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
-SUCH DAMAGES.
+=cut

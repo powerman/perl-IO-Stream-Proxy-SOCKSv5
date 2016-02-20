@@ -3,9 +3,9 @@ use warnings;
 use strict;
 use t::share;
 
-if (CFG_ONLINE ne 'y') {
-    plan skip_all => 'online tests disabled';
-}
+plan skip_all => '$TEST_SOCKS5_PROXY_{HOST,PORT} are not configured'
+    if !$ENV{TEST_SOCKS5_PROXY_HOST};
+
 
 IO::Stream->new({
     host        => 'www.google.com',
@@ -16,8 +16,8 @@ IO::Stream->new({
     in_buf_limit=> 102400,
     plugin      => [
         proxy       => IO::Stream::Proxy::SOCKSv5->new({
-            host        => CFG_HOST,
-            port        => CFG_PORT,
+            host        => $ENV{TEST_SOCKS5_PROXY_HOST},
+            port        => $ENV{TEST_SOCKS5_PROXY_PORT},
         }),
     ],
 });
