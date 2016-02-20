@@ -7,7 +7,7 @@ IO::Stream::Proxy::SOCKSv5 - SOCKSv5 proxy plugin for IO::Stream
 
 # VERSION
 
-This document describes IO::Stream::Proxy::SOCKSv5 version v1.0.2
+This document describes IO::Stream::Proxy::SOCKSv5 version v2.0.0
 
 # SYNOPSIS
 

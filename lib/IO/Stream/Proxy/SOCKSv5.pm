@@ -5,7 +5,7 @@ use strict;
 use utf8;
 use Carp;
 
-our $VERSION = 'v1.0.2';
+our $VERSION = 'v2.0.0';
 
 use IO::Stream::const;
 use IO::Stream::EV;
@@ -174,7 +174,7 @@ IO::Stream::Proxy::SOCKSv5 - SOCKSv5 proxy plugin for IO::Stream
 
 =head1 VERSION
 
-This document describes IO::Stream::Proxy::SOCKSv5 version v1.0.2
+This document describes IO::Stream::Proxy::SOCKSv5 version v2.0.0
 
 
 =head1 SYNOPSIS

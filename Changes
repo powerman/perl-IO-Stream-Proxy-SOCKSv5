@@ -1,6 +1,8 @@
 Revision history for IO-Stream-Proxy-SOCKSv5
 
 {{$NEXT}}
+
+v2.0.0  2016-02-20 15:19:08 EET
 	- Switch to Dist::Milla.
 
 1.0.2   2013-10-03 17:02:13 EEST

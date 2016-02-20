@@ -59,7 +59,7 @@
    "provides" : {
       "IO::Stream::Proxy::SOCKSv5" : {
          "file" : "lib/IO/Stream/Proxy/SOCKSv5.pm",
-         "version" : "v1.0.2"
+         "version" : "v2.0.0"
       }
    },
    "release_status" : "stable",
@@ -74,6 +74,6 @@
          "web" : "https://github.com/powerman/perl-IO-Stream-Proxy-SOCKSv5"
       }
    },
-   "version" : "v1.0.2"
+   "version" : "v2.0.0"
 }
 
