@@ -54,9 +54,14 @@ target {host} (and not when socket will connect to SOCKS proxy itself).
 
 # INTERFACE 
 
-- new({ host=>$host, port=>$port })
+## new
 
-    Connect to proxy $host:$port.
+    $plugin = IO::Stream::Proxy::SOCKSv5->new({
+        host => $host,
+        port => $port,
+    });
+
+Connect to proxy $host:$port.
 
 # DIAGNOSTICS
 
@@ -126,7 +131,7 @@ Alex Efros &lt;powerman@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2010 by Alex Efros &lt;powerman@cpan.org>.
+This software is Copyright (c) 2010- by Alex Efros &lt;powerman@cpan.org>.
 
 This is free software, licensed under:
 
